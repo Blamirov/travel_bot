@@ -1,0 +1,719 @@
+2023-02-04 18:47:40 ERROR При подключении к MySQL обнаружена ошибка: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2023-02-05 14:54:49 INFO База данных обнаружена
+2023-02-05 15:21:13 INFO База данных обнаружена
+2023-02-22 14:07:17 INFO База данных обнаружена
+2023-02-22 14:32:14 ERROR При подключении к MySQL обнаружена ошибка: 1045 (28000): Access denied for user 'root1'@'localhost' (using password: YES)
+2023-02-22 14:32:32 INFO База данных обнаружена
+2023-02-22 14:33:12 INFO База данных обнаружена
+2023-02-22 14:33:59 INFO База данных обнаружена
+2023-02-22 14:36:34 INFO База данных обнаружена
+2023-02-22 14:38:13 INFO База данных обнаружена
+2023-02-22 14:38:36 INFO База данных обнаружена
+2023-02-22 14:38:56 INFO База данных обнаружена
+2023-02-22 14:39:08 INFO База данных обнаружена
+2023-02-22 14:40:11 INFO База данных обнаружена
+2023-02-22 14:40:51 INFO База данных обнаружена
+2023-02-22 14:41:39 INFO База данных обнаружена
+2023-02-22 14:44:23 INFO База данных обнаружена
+2023-02-22 14:44:44 INFO База данных обнаружена
+2023-02-22 14:45:25 ERROR An error has been caught in function 'amount_photo', process 'MainProcess' (2663), thread 'WorkerThread1' (123145343754240):
+Traceback (most recent call last):
+
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 966, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x105d2e5f0>
+    └ <WorkerThread(WorkerThread1, started daemon 123145343754240)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 1009, in _bootstrap_inner
+    self.run()
+    │    └ <function WorkerThread.run at 0x105c12680>
+    └ <WorkerThread(WorkerThread1, started daemon 123145343754240)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/util.py", line 100, in run
+    task(*args, **kwargs)
+    │     │       └ {'handlers': [{'function': <function bot_start at 0x106f7b880>, 'pass_bot': False, 'filters': {'content_types': ['text'], 'co...
+    │     └ (<telebot.types.Message object at 0x1074f22c0>,)
+    └ <bound method TeleBot._run_middlewares_and_handler of <telebot.TeleBot object at 0x105b43400>>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/__init__.py", line 6308, in _run_middlewares_and_handler
+    result = handler['function'](message)
+             │                   └ <telebot.types.Message object at 0x1074f22c0>
+             └ {'function': <function amount_photo at 0x1074c6710>, 'pass_bot': False, 'filters': {'content_types': ['text'], 'state': <tele...
+
+> File "/Users/romangombraikh/Desktop/python_basic_diploma/handlers/searching_command/searching.py", line 234, in amount_photo
+    request = hl.get_hotel_list(data)
+              │  │              └ {'tg_user_id': 460378627, 'bd_param': {'host': 'localhost', 'user': 'root', 'passwd': 'Gombrayx_2997', 'database': 'travel_bo...
+              │  └ <function get_hotel_list at 0x1073fb6d0>
+              └ <module 'handlers.API_getter.get_hotel_list' from '/Users/romangombraikh/Desktop/python_basic_diploma/handlers/API_getter/get...
+
+  File "/Users/romangombraikh/Desktop/python_basic_diploma/handlers/API_getter/get_hotel_list.py", line 64, in get_hotel_list
+    price = re.search(fr'\$\d+ total', str(hotel)).group()
+            │  │                           └ {'__typename': 'Property', 'id': '90083478', 'featuredMessages': [], 'name': 'Barentsburg Hotel', 'availability': {'__typenam...
+            │  └ <function search at 0x105c3f130>
+            └ <module 're' from '/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/re.py'>
+
+AttributeError: 'NoneType' object has no attribute 'group'
+2023-02-22 14:45:25 ERROR An error has been caught in function '_run_middlewares_and_handler', process 'MainProcess' (2663), thread 'WorkerThread1' (123145343754240):
+Traceback (most recent call last):
+
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 966, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x105d2e5f0>
+    └ <WorkerThread(WorkerThread1, started daemon 123145343754240)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 1009, in _bootstrap_inner
+    self.run()
+    │    └ <function WorkerThread.run at 0x105c12680>
+    └ <WorkerThread(WorkerThread1, started daemon 123145343754240)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/util.py", line 100, in run
+    task(*args, **kwargs)
+    │     │       └ {'handlers': [{'function': <function bot_start at 0x106f7b880>, 'pass_bot': False, 'filters': {'content_types': ['text'], 'co...
+    │     └ (<telebot.types.Message object at 0x1074f22c0>,)
+    └ <bound method TeleBot._run_middlewares_and_handler of <telebot.TeleBot object at 0x105b43400>>
+> File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/__init__.py", line 6308, in _run_middlewares_and_handler
+    result = handler['function'](message)
+             │                   └ <telebot.types.Message object at 0x1074f22c0>
+             └ {'function': <function amount_photo at 0x1074c6710>, 'pass_bot': False, 'filters': {'content_types': ['text'], 'state': <tele...
+
+  File "/Users/romangombraikh/Desktop/python_basic_diploma/handlers/searching_command/searching.py", line 235, in amount_photo
+    for values in request.values():
+                  └ None
+
+AttributeError: 'NoneType' object has no attribute 'values'
+2023-02-22 14:46:08 ERROR An error has been caught in function 'amount_photo', process 'MainProcess' (2663), thread 'WorkerThread1' (123145343754240):
+Traceback (most recent call last):
+
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 966, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x105d2e5f0>
+    └ <WorkerThread(WorkerThread1, started daemon 123145343754240)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 1009, in _bootstrap_inner
+    self.run()
+    │    └ <function WorkerThread.run at 0x105c12680>
+    └ <WorkerThread(WorkerThread1, started daemon 123145343754240)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/util.py", line 100, in run
+    task(*args, **kwargs)
+    │     │       └ {'handlers': [{'function': <function bot_start at 0x106f7b880>, 'pass_bot': False, 'filters': {'content_types': ['text'], 'co...
+    │     └ (<telebot.types.Message object at 0x1074f3340>,)
+    └ <bound method TeleBot._run_middlewares_and_handler of <telebot.TeleBot object at 0x105b43400>>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/__init__.py", line 6308, in _run_middlewares_and_handler
+    result = handler['function'](message)
+             │                   └ <telebot.types.Message object at 0x1074f3340>
+             └ {'function': <function amount_photo at 0x1074c6710>, 'pass_bot': False, 'filters': {'content_types': ['text'], 'state': <tele...
+
+> File "/Users/romangombraikh/Desktop/python_basic_diploma/handlers/searching_command/searching.py", line 234, in amount_photo
+    request = hl.get_hotel_list(data)
+              │  │              └ {'tg_user_id': 460378627, 'bd_param': {'host': 'localhost', 'user': 'root', 'passwd': 'Gombrayx_2997', 'database': 'travel_bo...
+              │  └ <function get_hotel_list at 0x1073fb6d0>
+              └ <module 'handlers.API_getter.get_hotel_list' from '/Users/romangombraikh/Desktop/python_basic_diploma/handlers/API_getter/get...
+
+  File "/Users/romangombraikh/Desktop/python_basic_diploma/handlers/API_getter/get_hotel_list.py", line 64, in get_hotel_list
+    price = re.search(fr'\$\d+ total', str(hotel)).group()
+            │  │                           └ {'__typename': 'Property', 'id': '90125893', 'featuredMessages': [], 'name': 'Pomor Hostel', 'availability': {'__typename': '...
+            │  └ <function search at 0x105c3f130>
+            └ <module 're' from '/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/re.py'>
+
+AttributeError: 'NoneType' object has no attribute 'group'
+2023-02-22 14:46:08 ERROR An error has been caught in function '_run_middlewares_and_handler', process 'MainProcess' (2663), thread 'WorkerThread1' (123145343754240):
+Traceback (most recent call last):
+
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 966, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x105d2e5f0>
+    └ <WorkerThread(WorkerThread1, started daemon 123145343754240)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 1009, in _bootstrap_inner
+    self.run()
+    │    └ <function WorkerThread.run at 0x105c12680>
+    └ <WorkerThread(WorkerThread1, started daemon 123145343754240)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/util.py", line 100, in run
+    task(*args, **kwargs)
+    │     │       └ {'handlers': [{'function': <function bot_start at 0x106f7b880>, 'pass_bot': False, 'filters': {'content_types': ['text'], 'co...
+    │     └ (<telebot.types.Message object at 0x1074f3340>,)
+    └ <bound method TeleBot._run_middlewares_and_handler of <telebot.TeleBot object at 0x105b43400>>
+> File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/__init__.py", line 6308, in _run_middlewares_and_handler
+    result = handler['function'](message)
+             │                   └ <telebot.types.Message object at 0x1074f3340>
+             └ {'function': <function amount_photo at 0x1074c6710>, 'pass_bot': False, 'filters': {'content_types': ['text'], 'state': <tele...
+
+  File "/Users/romangombraikh/Desktop/python_basic_diploma/handlers/searching_command/searching.py", line 235, in amount_photo
+    for values in request.values():
+                  └ None
+
+AttributeError: 'NoneType' object has no attribute 'values'
+2023-02-22 14:47:22 INFO База данных обнаружена
+2023-02-22 14:48:10 ERROR An error has been caught in function '_run_middlewares_and_handler', process 'MainProcess' (3199), thread 'WorkerThread1' (123145374908416):
+Traceback (most recent call last):
+
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 966, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x10a25a5f0>
+    └ <WorkerThread(WorkerThread1, started daemon 123145374908416)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 1009, in _bootstrap_inner
+    self.run()
+    │    └ <function WorkerThread.run at 0x10a13e680>
+    └ <WorkerThread(WorkerThread1, started daemon 123145374908416)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/util.py", line 100, in run
+    task(*args, **kwargs)
+    │     │       └ {'handlers': [{'function': <function bot_start at 0x10b493880>, 'pass_bot': False, 'filters': {'content_types': ['text'], 'co...
+    │     └ (<telebot.types.Message object at 0x10ba0f160>,)
+    └ <bound method TeleBot._run_middlewares_and_handler of <telebot.TeleBot object at 0x10a06b400>>
+> File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/__init__.py", line 6308, in _run_middlewares_and_handler
+    result = handler['function'](message)
+             │                   └ <telebot.types.Message object at 0x10ba0f160>
+             └ {'function': <function amount_photo at 0x10b952710>, 'pass_bot': False, 'filters': {'content_types': ['text'], 'state': <tele...
+
+  File "/Users/romangombraikh/Desktop/python_basic_diploma/handlers/searching_command/searching.py", line 244, in amount_photo
+    bot.send_photo(chat_id=message.chat.id, photo=url, caption=caption)
+    │   │                  │       │    │         │            └ 'Premium Quadruple Room'
+    │   │                  │       │    │         └ 'https://images.trvl-media.com/lodging/1000000/530000/523600/523595/cf149976.jpg?impolicy=resizecrop&rw=500&ra=fit'
+    │   │                  │       │    └ 460378627
+    │   │                  │       └ <telebot.types.Chat object at 0x10ba0cc70>
+    │   │                  └ <telebot.types.Message object at 0x10ba0f160>
+    │   └ <function TeleBot.send_photo at 0x10b47b5b0>
+    └ <telebot.TeleBot object at 0x10a06b400>
+
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/__init__.py", line 1821, in send_photo
+    apihelper.send_photo(
+    │         └ <function send_photo at 0x10b4743a0>
+    └ <module 'telebot.apihelper' from '/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/api...
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/apihelper.py", line 492, in send_photo
+    return _make_request(token, method_url, params=payload, files=files, method='post')
+           │             │      │                  │              └ None
+           │             │      │                  └ {'chat_id': 460378627, 'photo': 'https://images.trvl-media.com/lodging/1000000/530000/523600/523595/cf149976.jpg?impolicy=res...
+           │             │      └ 'sendPhoto'
+           │             └ '5350269637:AAGIU_jYfs-eTB2dqjOmebpY139_UN70ALs'
+           └ <function _make_request at 0x10ae61990>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/apihelper.py", line 162, in _make_request
+    json_result = _check_result(method_name, result)
+                  │             │            └ <Response [400]>
+                  │             └ 'sendPhoto'
+                  └ <function _check_result at 0x10b143010>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/apihelper.py", line 189, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+          │                    │            │       └ {'ok': False, 'error_code': 400, 'description': 'Bad Request: failed to get HTTP URL content'}
+          │                    │            └ <Response [400]>
+          │                    └ 'sendPhoto'
+          └ <class 'telebot.apihelper.ApiTelegramException'>
+
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: failed to get HTTP URL content
+2023-02-22 14:51:10 ERROR An error has been caught in function '_run_middlewares_and_handler', process 'MainProcess' (3199), thread 'WorkerThread1' (123145374908416):
+Traceback (most recent call last):
+
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 966, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x10a25a5f0>
+    └ <WorkerThread(WorkerThread1, started daemon 123145374908416)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 1009, in _bootstrap_inner
+    self.run()
+    │    └ <function WorkerThread.run at 0x10a13e680>
+    └ <WorkerThread(WorkerThread1, started daemon 123145374908416)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/util.py", line 100, in run
+    task(*args, **kwargs)
+    │     │       └ {'handlers': [{'function': <function bot_start at 0x10b493880>, 'pass_bot': False, 'filters': {'content_types': ['text'], 'co...
+    │     └ (<telebot.types.Message object at 0x10ba0f520>,)
+    └ <bound method TeleBot._run_middlewares_and_handler of <telebot.TeleBot object at 0x10a06b400>>
+> File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/__init__.py", line 6308, in _run_middlewares_and_handler
+    result = handler['function'](message)
+             │                   └ <telebot.types.Message object at 0x10ba0f520>
+             └ {'function': <function amount_photo at 0x10b952710>, 'pass_bot': False, 'filters': {'content_types': ['text'], 'state': <tele...
+
+  File "/Users/romangombraikh/Desktop/python_basic_diploma/handlers/searching_command/searching.py", line 244, in amount_photo
+    bot.send_photo(chat_id=message.chat.id, photo=url, caption=caption)
+    │   │                  │       │    │         │            └ 'Premium Quadruple Room'
+    │   │                  │       │    │         └ 'https://images.trvl-media.com/lodging/1000000/530000/523600/523595/cf149976.jpg?impolicy=resizecrop&rw=500&ra=fit'
+    │   │                  │       │    └ 460378627
+    │   │                  │       └ <telebot.types.Chat object at 0x10ba0d990>
+    │   │                  └ <telebot.types.Message object at 0x10ba0f520>
+    │   └ <function TeleBot.send_photo at 0x10b47b5b0>
+    └ <telebot.TeleBot object at 0x10a06b400>
+
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/__init__.py", line 1821, in send_photo
+    apihelper.send_photo(
+    │         └ <function send_photo at 0x10b4743a0>
+    └ <module 'telebot.apihelper' from '/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/api...
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/apihelper.py", line 492, in send_photo
+    return _make_request(token, method_url, params=payload, files=files, method='post')
+           │             │      │                  │              └ None
+           │             │      │                  └ {'chat_id': 460378627, 'photo': 'https://images.trvl-media.com/lodging/1000000/530000/523600/523595/cf149976.jpg?impolicy=res...
+           │             │      └ 'sendPhoto'
+           │             └ '5350269637:AAGIU_jYfs-eTB2dqjOmebpY139_UN70ALs'
+           └ <function _make_request at 0x10ae61990>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/apihelper.py", line 162, in _make_request
+    json_result = _check_result(method_name, result)
+                  │             │            └ <Response [400]>
+                  │             └ 'sendPhoto'
+                  └ <function _check_result at 0x10b143010>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/apihelper.py", line 189, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+          │                    │            │       └ {'ok': False, 'error_code': 400, 'description': 'Bad Request: wrong file identifier/HTTP URL specified'}
+          │                    │            └ <Response [400]>
+          │                    └ 'sendPhoto'
+          └ <class 'telebot.apihelper.ApiTelegramException'>
+
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: wrong file identifier/HTTP URL specified
+2023-02-22 15:33:52 ERROR При подключении к MySQL обнаружена ошибка: 1045 (28000): Access denied for user 'root1'@'localhost' (using password: YES)
+2023-02-22 15:33:58 ERROR 1045 (28000): Access denied for user 'root1'@'localhost' (using password: YES)
+2023-02-22 15:33:58 ERROR 1045 (28000): Access denied for user 'root1'@'localhost' (using password: YES)
+2023-02-22 15:33:58 INFO Записан новый пользователь
+2023-02-22 15:34:02 ERROR 1045 (28000): Access denied for user 'root1'@'localhost' (using password: YES)
+2023-02-22 15:34:02 ERROR An error has been caught in function '_run_middlewares_and_handler', process 'MainProcess' (11377), thread 'WorkerThread1' (123145336582144):
+Traceback (most recent call last):
+
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 966, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x109cfe5f0>
+    └ <WorkerThread(WorkerThread1, started daemon 123145336582144)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 1009, in _bootstrap_inner
+    self.run()
+    │    └ <function WorkerThread.run at 0x109be2680>
+    └ <WorkerThread(WorkerThread1, started daemon 123145336582144)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/util.py", line 100, in run
+    task(*args, **kwargs)
+    │     │       └ {'handlers': [{'function': <function bot_start at 0x10af4b880>, 'pass_bot': False, 'filters': {'content_types': ['text'], 'co...
+    │     └ (<telebot.types.Message object at 0x10b4c9390>,)
+    └ <bound method TeleBot._run_middlewares_and_handler of <telebot.TeleBot object at 0x109b0f400>>
+> File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/__init__.py", line 6308, in _run_middlewares_and_handler
+    result = handler['function'](message)
+             │                   └ <telebot.types.Message object at 0x10b4c9390>
+             └ {'function': <function start_ex at 0x10b49c9d0>, 'pass_bot': False, 'filters': {'content_types': ['text'], 'state': <telebot....
+
+  File "/Users/romangombraikh/Desktop/python_basic_diploma/handlers/searching_command/searching.py", line 42, in start_ex
+    data['user_id'] = execute_read_query(data['bd_param'], query_user)[0][0]
+    │                 │                  │                 └ 'SELECT id FROM user WHERE tg_user_id = 460378627'
+    │                 │                  └ {'tg_user_id': 460378627, 'bd_param': {'host': 'localhost', 'user': 'root1', 'passwd': 'Gombrayx_2997', 'database': 'travel_b...
+    │                 └ <function execute_read_query at 0x10b3cde10>
+    └ {'tg_user_id': 460378627, 'bd_param': {'host': 'localhost', 'user': 'root1', 'passwd': 'Gombrayx_2997', 'database': 'travel_b...
+
+TypeError: 'NoneType' object is not subscriptable
+2023-02-22 17:34:56 INFO База данных обнаружена
+2023-02-22 18:10:41 INFO База данных обнаружена
+2023-02-22 18:12:29 INFO База данных обнаружена
+2023-02-22 18:13:23 INFO База данных обнаружена
+2023-02-22 18:15:07 INFO База данных обнаружена
+2023-02-26 12:09:51 INFO База данных обнаружена
+2023-02-26 17:01:20 INFO База данных создана
+2023-02-26 17:01:25 INFO Записан новый пользователь
+2023-02-26 18:28:08 INFO Начался новый сеанс
+2023-02-26 18:28:08 ERROR При подключении к MySQL обнаружена ошибка: 2003 (HY000): Can't connect to MySQL server on '33060:3306' (65)
+2023-02-26 18:28:55 INFO Начался новый сеанс
+2023-02-26 18:28:55 ERROR При подключении к MySQL обнаружена ошибка: 2003 (HY000): Can't connect to MySQL server on '3060:3306' (65)
+2023-02-26 18:29:28 INFO Начался новый сеанс
+2023-02-26 18:29:28 ERROR При подключении к MySQL обнаружена ошибка: 2003 (HY000): Can't connect to MySQL server on '3306:3306' (65)
+2023-02-26 18:30:14 INFO Начался новый сеанс
+2023-02-26 18:30:14 ERROR При подключении к MySQL обнаружена ошибка: 2005 (HY000): Unknown MySQL server host 'localhost:33060' (8)
+2023-02-26 18:30:40 INFO Начался новый сеанс
+2023-02-26 18:30:40 INFO База данных обнаружена
+2023-02-28 13:19:56 INFO Начался новый сеанс
+2023-02-28 13:19:57 INFO База данных обнаружена
+2023-02-28 14:01:03 INFO Начался новый сеанс
+2023-02-28 14:01:03 INFO База данных обнаружена
+2023-02-28 16:21:49 INFO Начался новый сеанс
+2023-02-28 16:21:49 INFO База данных обнаружена
+2023-02-28 16:22:32 INFO Начался новый сеанс
+2023-02-28 16:22:32 INFO База данных обнаружена
+2023-02-28 16:29:40 INFO Начался новый сеанс
+2023-02-28 16:29:40 INFO База данных обнаружена
+2023-02-28 17:27:36 INFO Начался новый сеанс
+2023-02-28 17:27:36 ERROR При подключении к MySQL обнаружена ошибка: 2003 (HY000): Can't connect to MySQL server on '3306:3306' (65)
+2023-02-28 18:15:30 INFO Начался новый сеанс
+2023-02-28 18:15:31 INFO База данных обнаружена
+2023-02-28 18:18:17 INFO Записан новый пользователь
+2023-02-28 18:19:42 ERROR An error has been caught in function 'amount_photo', process 'MainProcess' (27375), thread 'WorkerThread1' (123145511968768):
+Traceback (most recent call last):
+
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 966, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x106d86680>
+    └ <WorkerThread(WorkerThread1, started daemon 123145511968768)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 1009, in _bootstrap_inner
+    self.run()
+    │    └ <function WorkerThread.run at 0x106c62680>
+    └ <WorkerThread(WorkerThread1, started daemon 123145511968768)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/util.py", line 100, in run
+    task(*args, **kwargs)
+    │     │       └ {'handlers': [{'function': <function bot_start at 0x107fcf910>, 'pass_bot': False, 'filters': {'content_types': ['text'], 'co...
+    │     └ (<telebot.types.Message object at 0x10854f010>,)
+    └ <bound method TeleBot._run_middlewares_and_handler of <telebot.TeleBot object at 0x106b8f400>>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/__init__.py", line 6308, in _run_middlewares_and_handler
+    result = handler['function'](message)
+             │                   └ <telebot.types.Message object at 0x10854f010>
+             └ {'function': <function amount_photo at 0x1085227a0>, 'pass_bot': False, 'filters': {'content_types': ['text'], 'state': <tele...
+
+> File "/Users/romangombraikh/Desktop/python_basic_diploma/handlers/searching_command/searching.py", line 234, in amount_photo
+    request = hl.get_hotel_list(data)
+              │  │              └ {'tg_user_id': 357396318, 'bd_param': {'host': 'localhost', 'user': 'root', 'passwd': 'Gombrayx_2997', 'database': 'travel_bo...
+              │  └ <function get_hotel_list at 0x108457760>
+              └ <module 'handlers.API_getter.get_hotel_list' from '/Users/romangombraikh/Desktop/python_basic_diploma/handlers/API_getter/get...
+
+  File "/Users/romangombraikh/Desktop/python_basic_diploma/handlers/API_getter/get_hotel_list.py", line 64, in get_hotel_list
+    price = re.search(fr'\$\d+ total', str(hotel)).group()
+            │  │                           └ {'__typename': 'Property', 'id': '6591306', 'featuredMessages': [], 'name': 'Hotel Vite - By Naman Hotellerie', 'availability...
+            │  └ <function search at 0x106c8f1c0>
+            └ <module 're' from '/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/re.py'>
+
+AttributeError: 'NoneType' object has no attribute 'group'
+2023-02-28 18:19:42 ERROR An error has been caught in function '_run_middlewares_and_handler', process 'MainProcess' (27375), thread 'WorkerThread1' (123145511968768):
+Traceback (most recent call last):
+
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 966, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x106d86680>
+    └ <WorkerThread(WorkerThread1, started daemon 123145511968768)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 1009, in _bootstrap_inner
+    self.run()
+    │    └ <function WorkerThread.run at 0x106c62680>
+    └ <WorkerThread(WorkerThread1, started daemon 123145511968768)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/util.py", line 100, in run
+    task(*args, **kwargs)
+    │     │       └ {'handlers': [{'function': <function bot_start at 0x107fcf910>, 'pass_bot': False, 'filters': {'content_types': ['text'], 'co...
+    │     └ (<telebot.types.Message object at 0x10854f010>,)
+    └ <bound method TeleBot._run_middlewares_and_handler of <telebot.TeleBot object at 0x106b8f400>>
+> File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/__init__.py", line 6308, in _run_middlewares_and_handler
+    result = handler['function'](message)
+             │                   └ <telebot.types.Message object at 0x10854f010>
+             └ {'function': <function amount_photo at 0x1085227a0>, 'pass_bot': False, 'filters': {'content_types': ['text'], 'state': <tele...
+
+  File "/Users/romangombraikh/Desktop/python_basic_diploma/handlers/searching_command/searching.py", line 235, in amount_photo
+    for values in request.values():
+                  └ None
+
+AttributeError: 'NoneType' object has no attribute 'values'
+2023-02-28 18:23:06 INFO Начался новый сеанс
+2023-02-28 18:23:06 INFO База данных обнаружена
+2023-02-28 18:24:41 ERROR An error has been caught in function '_run_middlewares_and_handler', process 'MainProcess' (29221), thread 'WorkerThread1' (123145578156032):
+Traceback (most recent call last):
+
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 966, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x10efea680>
+    └ <WorkerThread(WorkerThread1, started daemon 123145578156032)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 1009, in _bootstrap_inner
+    self.run()
+    │    └ <function WorkerThread.run at 0x10eeca680>
+    └ <WorkerThread(WorkerThread1, started daemon 123145578156032)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/util.py", line 100, in run
+    task(*args, **kwargs)
+    │     │       └ {'handlers': [{'function': <function destination at 0x110785510>, 'pass_bot': False, 'filters': {'func': <function <lambda> a...
+    │     └ (<telebot.types.CallbackQuery object at 0x1107afee0>,)
+    └ <bound method TeleBot._run_middlewares_and_handler of <telebot.TeleBot object at 0x10edf7400>>
+> File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/__init__.py", line 6308, in _run_middlewares_and_handler
+    result = handler['function'](message)
+             │                   └ <telebot.types.CallbackQuery object at 0x1107afee0>
+             └ {'function': <function cal1 at 0x110785900>, 'pass_bot': False, 'filters': {'func': <function TelegramCalendar.func.<locals>....
+
+  File "/Users/romangombraikh/Desktop/python_basic_diploma/handlers/searching_command/searching.py", line 121, in cal1
+    bot.edit_message_text(f"Дата приезда {arrival_date}",
+    │   └ <function TeleBot.edit_message_text at 0x110229000>
+    └ <telebot.TeleBot object at 0x10edf7400>
+
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/__init__.py", line 3631, in edit_message_text
+    result = apihelper.edit_message_text(self.token, text, chat_id, message_id, inline_message_id, parse_mode,
+             │         │                 │    │      │     │        │           │                  └ None
+             │         │                 │    │      │     │        │           └ None
+             │         │                 │    │      │     │        └ 6620
+             │         │                 │    │      │     └ 357396318
+             │         │                 │    │      └ 'Дата приезда 2023-05-15'
+             │         │                 │    └ '5350269637:AAGIU_jYfs-eTB2dqjOmebpY139_UN70ALs'
+             │         │                 └ <telebot.TeleBot object at 0x10edf7400>
+             │         └ <function edit_message_text at 0x110215c60>
+             └ <module 'telebot.apihelper' from '/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/api...
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/apihelper.py", line 1275, in edit_message_text
+    return _make_request(token, method_url, params=payload, method='post')
+           │             │      │                  └ {'text': 'Дата приезда 2023-05-15', 'chat_id': 357396318, 'message_id': 6620}
+           │             │      └ 'editMessageText'
+           │             └ '5350269637:AAGIU_jYfs-eTB2dqjOmebpY139_UN70ALs'
+           └ <function _make_request at 0x10fbf1a20>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/apihelper.py", line 162, in _make_request
+    json_result = _check_result(method_name, result)
+                  │             │            └ <Response [400]>
+                  │             └ 'editMessageText'
+                  └ <function _check_result at 0x10fee70a0>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/apihelper.py", line 189, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+          │                    │            │       └ {'ok': False, 'error_code': 400, 'description': 'Bad Request: message is not modified: specified new message content and repl...
+          │                    │            └ <Response [400]>
+          │                    └ 'editMessageText'
+          └ <class 'telebot.apihelper.ApiTelegramException'>
+
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+2023-02-28 18:25:34 ERROR Expecting value: line 1 column 1 (char 0)
+2023-02-28 18:25:34 ERROR An error has been caught in function 'get_hotel_list', process 'MainProcess' (29221), thread 'WorkerThread2' (123145594945536):
+Traceback (most recent call last):
+
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 966, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x10efea680>
+    └ <WorkerThread(WorkerThread2, started daemon 123145594945536)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 1009, in _bootstrap_inner
+    self.run()
+    │    └ <function WorkerThread.run at 0x10eeca680>
+    └ <WorkerThread(WorkerThread2, started daemon 123145594945536)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/util.py", line 100, in run
+    task(*args, **kwargs)
+    │     │       └ {'handlers': [{'function': <function bot_start at 0x110233910>, 'pass_bot': False, 'filters': {'content_types': ['text'], 'co...
+    │     └ (<telebot.types.Message object at 0x1107ae980>,)
+    └ <bound method TeleBot._run_middlewares_and_handler of <telebot.TeleBot object at 0x10edf7400>>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/__init__.py", line 6308, in _run_middlewares_and_handler
+    result = handler['function'](message)
+             │                   └ <telebot.types.Message object at 0x1107ae980>
+             └ {'function': <function amount_photo at 0x1107867a0>, 'pass_bot': False, 'filters': {'content_types': ['text'], 'state': <tele...
+
+  File "/Users/romangombraikh/Desktop/python_basic_diploma/handlers/searching_command/searching.py", line 234, in amount_photo
+    request = hl.get_hotel_list(data)
+              │  │              └ {'tg_user_id': 357396318, 'bd_param': {'host': 'localhost', 'user': 'root', 'passwd': 'Gombrayx_2997', 'database': 'travel_bo...
+              │  └ <function get_hotel_list at 0x1106bb760>
+              └ <module 'handlers.API_getter.get_hotel_list' from '/Users/romangombraikh/Desktop/python_basic_diploma/handlers/API_getter/get...
+
+> File "/Users/romangombraikh/Desktop/python_basic_diploma/handlers/API_getter/get_hotel_list.py", line 63, in get_hotel_list
+    for hotel in get_value(response_hotels, 'properties'):
+                 │         └ None
+                 └ <function get_value at 0x1106ba710>
+
+  File "/Users/romangombraikh/Desktop/python_basic_diploma/handlers/default_heandlers/getters.py", line 14, in get_value
+    if looking in some_dict:
+       │          └ None
+       └ 'properties'
+
+TypeError: argument of type 'NoneType' is not iterable
+2023-02-28 18:25:34 ERROR An error has been caught in function 'amount_photo', process 'MainProcess' (29221), thread 'WorkerThread2' (123145594945536):
+Traceback (most recent call last):
+
+  File "/Users/romangombraikh/Desktop/python_basic_diploma/handlers/API_getter/get_hotel_list.py", line 63, in get_hotel_list
+    for hotel in get_value(response_hotels, 'properties'):
+                 │         └ None
+                 └ <function get_value at 0x1106ba710>
+
+TypeError: 'NoneType' object is not iterable
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 966, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x10efea680>
+    └ <WorkerThread(WorkerThread2, started daemon 123145594945536)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 1009, in _bootstrap_inner
+    self.run()
+    │    └ <function WorkerThread.run at 0x10eeca680>
+    └ <WorkerThread(WorkerThread2, started daemon 123145594945536)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/util.py", line 100, in run
+    task(*args, **kwargs)
+    │     │       └ {'handlers': [{'function': <function bot_start at 0x110233910>, 'pass_bot': False, 'filters': {'content_types': ['text'], 'co...
+    │     └ (<telebot.types.Message object at 0x1107ae980>,)
+    └ <bound method TeleBot._run_middlewares_and_handler of <telebot.TeleBot object at 0x10edf7400>>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/__init__.py", line 6308, in _run_middlewares_and_handler
+    result = handler['function'](message)
+             │                   └ <telebot.types.Message object at 0x1107ae980>
+             └ {'function': <function amount_photo at 0x1107867a0>, 'pass_bot': False, 'filters': {'content_types': ['text'], 'state': <tele...
+
+> File "/Users/romangombraikh/Desktop/python_basic_diploma/handlers/searching_command/searching.py", line 234, in amount_photo
+    request = hl.get_hotel_list(data)
+              │  │              └ {'tg_user_id': 357396318, 'bd_param': {'host': 'localhost', 'user': 'root', 'passwd': 'Gombrayx_2997', 'database': 'travel_bo...
+              │  └ <function get_hotel_list at 0x1106bb760>
+              └ <module 'handlers.API_getter.get_hotel_list' from '/Users/romangombraikh/Desktop/python_basic_diploma/handlers/API_getter/get...
+
+  File "/Users/romangombraikh/Desktop/python_basic_diploma/handlers/API_getter/get_hotel_list.py", line 92, in get_hotel_list
+    logger.error(e, response_hotels)
+    │      │        └ None
+    │      └ <function Logger.error at 0x110400ca0>
+    └ <loguru.logger handlers=[(id=0, level=10, sink=<stderr>), (id=1, level=10, sink='logger.log')]>
+
+AttributeError: 'TypeError' object has no attribute 'format'
+2023-02-28 18:25:34 ERROR An error has been caught in function '_run_middlewares_and_handler', process 'MainProcess' (29221), thread 'WorkerThread2' (123145594945536):
+Traceback (most recent call last):
+
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 966, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x10efea680>
+    └ <WorkerThread(WorkerThread2, started daemon 123145594945536)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 1009, in _bootstrap_inner
+    self.run()
+    │    └ <function WorkerThread.run at 0x10eeca680>
+    └ <WorkerThread(WorkerThread2, started daemon 123145594945536)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/util.py", line 100, in run
+    task(*args, **kwargs)
+    │     │       └ {'handlers': [{'function': <function bot_start at 0x110233910>, 'pass_bot': False, 'filters': {'content_types': ['text'], 'co...
+    │     └ (<telebot.types.Message object at 0x1107ae980>,)
+    └ <bound method TeleBot._run_middlewares_and_handler of <telebot.TeleBot object at 0x10edf7400>>
+> File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/__init__.py", line 6308, in _run_middlewares_and_handler
+    result = handler['function'](message)
+             │                   └ <telebot.types.Message object at 0x1107ae980>
+             └ {'function': <function amount_photo at 0x1107867a0>, 'pass_bot': False, 'filters': {'content_types': ['text'], 'state': <tele...
+
+  File "/Users/romangombraikh/Desktop/python_basic_diploma/handlers/searching_command/searching.py", line 235, in amount_photo
+    for values in request.values():
+                  └ None
+
+AttributeError: 'NoneType' object has no attribute 'values'
+2023-02-28 18:27:50 INFO Начался новый сеанс
+2023-02-28 18:27:50 INFO База данных обнаружена
+2023-02-28 18:29:57 ERROR An error has been caught in function 'need_photo', process 'MainProcess' (30356), thread 'WorkerThread2' (123145502097408):
+Traceback (most recent call last):
+
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 966, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x10668e680>
+    └ <WorkerThread(WorkerThread2, started daemon 123145502097408)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 1009, in _bootstrap_inner
+    self.run()
+    │    └ <function WorkerThread.run at 0x10656e680>
+    └ <WorkerThread(WorkerThread2, started daemon 123145502097408)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/util.py", line 100, in run
+    task(*args, **kwargs)
+    │     │       └ {'handlers': [{'function': <function destination at 0x107d81510>, 'pass_bot': False, 'filters': {'func': <function <lambda> a...
+    │     └ (<telebot.types.CallbackQuery object at 0x107e3ac20>,)
+    └ <bound method TeleBot._run_middlewares_and_handler of <telebot.TeleBot object at 0x10649b400>>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/__init__.py", line 6308, in _run_middlewares_and_handler
+    result = handler['function'](message)
+             │                   └ <telebot.types.CallbackQuery object at 0x107e3ac20>
+             └ {'function': <function need_photo at 0x107d82440>, 'pass_bot': False, 'filters': {'func': <function <lambda> at 0x107d81bd0>,...
+
+> File "/Users/romangombraikh/Desktop/python_basic_diploma/handlers/searching_command/searching.py", line 204, in need_photo
+    request = hl.get_hotel_list(data)
+              │  │              └ {'tg_user_id': 357396318, 'bd_param': {'host': 'localhost', 'user': 'root', 'passwd': 'Gombrayx_2997', 'database': 'travel_bo...
+              │  └ <function get_hotel_list at 0x107d47760>
+              └ <module 'handlers.API_getter.get_hotel_list' from '/Users/romangombraikh/Desktop/python_basic_diploma/handlers/API_getter/get...
+
+  File "/Users/romangombraikh/Desktop/python_basic_diploma/handlers/API_getter/get_hotel_list.py", line 64, in get_hotel_list
+    price = re.search(fr'\$\d+ total', str(hotel)).group()
+            │  │                           └ {'__typename': 'Property', 'id': '70012256', 'featuredMessages': [], 'name': 'Hôtel Château Voltaire', 'availability': {'__ty...
+            │  └ <function search at 0x10659b1c0>
+            └ <module 're' from '/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/re.py'>
+
+AttributeError: 'NoneType' object has no attribute 'group'
+2023-02-28 18:29:57 ERROR An error has been caught in function '_run_middlewares_and_handler', process 'MainProcess' (30356), thread 'WorkerThread2' (123145502097408):
+Traceback (most recent call last):
+
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 966, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x10668e680>
+    └ <WorkerThread(WorkerThread2, started daemon 123145502097408)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 1009, in _bootstrap_inner
+    self.run()
+    │    └ <function WorkerThread.run at 0x10656e680>
+    └ <WorkerThread(WorkerThread2, started daemon 123145502097408)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/util.py", line 100, in run
+    task(*args, **kwargs)
+    │     │       └ {'handlers': [{'function': <function destination at 0x107d81510>, 'pass_bot': False, 'filters': {'func': <function <lambda> a...
+    │     └ (<telebot.types.CallbackQuery object at 0x107e3ac20>,)
+    └ <bound method TeleBot._run_middlewares_and_handler of <telebot.TeleBot object at 0x10649b400>>
+> File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/__init__.py", line 6308, in _run_middlewares_and_handler
+    result = handler['function'](message)
+             │                   └ <telebot.types.CallbackQuery object at 0x107e3ac20>
+             └ {'function': <function need_photo at 0x107d82440>, 'pass_bot': False, 'filters': {'func': <function <lambda> at 0x107d81bd0>,...
+
+  File "/Users/romangombraikh/Desktop/python_basic_diploma/handlers/searching_command/searching.py", line 205, in need_photo
+    for values in request.values():
+                  └ None
+
+AttributeError: 'NoneType' object has no attribute 'values'
+2023-02-28 18:45:58 ERROR An error has been caught in function 'need_photo', process 'MainProcess' (30356), thread 'WorkerThread1' (123145485307904):
+Traceback (most recent call last):
+
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 966, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x10668e680>
+    └ <WorkerThread(WorkerThread1, started daemon 123145485307904)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 1009, in _bootstrap_inner
+    self.run()
+    │    └ <function WorkerThread.run at 0x10656e680>
+    └ <WorkerThread(WorkerThread1, started daemon 123145485307904)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/util.py", line 100, in run
+    task(*args, **kwargs)
+    │     │       └ {'handlers': [{'function': <function destination at 0x107d81510>, 'pass_bot': False, 'filters': {'func': <function <lambda> a...
+    │     └ (<telebot.types.CallbackQuery object at 0x107e3a050>,)
+    └ <bound method TeleBot._run_middlewares_and_handler of <telebot.TeleBot object at 0x10649b400>>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/__init__.py", line 6308, in _run_middlewares_and_handler
+    result = handler['function'](message)
+             │                   └ <telebot.types.CallbackQuery object at 0x107e3a050>
+             └ {'function': <function need_photo at 0x107d82440>, 'pass_bot': False, 'filters': {'func': <function <lambda> at 0x107d81bd0>,...
+
+> File "/Users/romangombraikh/Desktop/python_basic_diploma/handlers/searching_command/searching.py", line 204, in need_photo
+    request = hl.get_hotel_list(data)
+              │  │              └ {'tg_user_id': 357396318, 'bd_param': {'host': 'localhost', 'user': 'root', 'passwd': 'Gombrayx_2997', 'database': 'travel_bo...
+              │  └ <function get_hotel_list at 0x107d47760>
+              └ <module 'handlers.API_getter.get_hotel_list' from '/Users/romangombraikh/Desktop/python_basic_diploma/handlers/API_getter/get...
+
+  File "/Users/romangombraikh/Desktop/python_basic_diploma/handlers/API_getter/get_hotel_list.py", line 64, in get_hotel_list
+    price = re.search(fr'\$\d+ total', str(hotel)).group()
+            │  │                           └ {'__typename': 'Property', 'id': '20225281', 'featuredMessages': [], 'name': 'Hotel am Borsigturm', 'availability': {'__typen...
+            │  └ <function search at 0x10659b1c0>
+            └ <module 're' from '/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/re.py'>
+
+AttributeError: 'NoneType' object has no attribute 'group'
+2023-02-28 18:45:58 ERROR An error has been caught in function '_run_middlewares_and_handler', process 'MainProcess' (30356), thread 'WorkerThread1' (123145485307904):
+Traceback (most recent call last):
+
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 966, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x10668e680>
+    └ <WorkerThread(WorkerThread1, started daemon 123145485307904)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/threading.py", line 1009, in _bootstrap_inner
+    self.run()
+    │    └ <function WorkerThread.run at 0x10656e680>
+    └ <WorkerThread(WorkerThread1, started daemon 123145485307904)>
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/util.py", line 100, in run
+    task(*args, **kwargs)
+    │     │       └ {'handlers': [{'function': <function destination at 0x107d81510>, 'pass_bot': False, 'filters': {'func': <function <lambda> a...
+    │     └ (<telebot.types.CallbackQuery object at 0x107e3a050>,)
+    └ <bound method TeleBot._run_middlewares_and_handler of <telebot.TeleBot object at 0x10649b400>>
+> File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/telebot/__init__.py", line 6308, in _run_middlewares_and_handler
+    result = handler['function'](message)
+             │                   └ <telebot.types.CallbackQuery object at 0x107e3a050>
+             └ {'function': <function need_photo at 0x107d82440>, 'pass_bot': False, 'filters': {'func': <function <lambda> at 0x107d81bd0>,...
+
+  File "/Users/romangombraikh/Desktop/python_basic_diploma/handlers/searching_command/searching.py", line 205, in need_photo
+    for values in request.values():
+                  └ None
+
+AttributeError: 'NoneType' object has no attribute 'values'
+2023-03-04 11:48:25 INFO Начался новый сеанс
+2023-03-04 11:48:25 INFO База данных обнаружена
+2023-03-04 12:09:52 INFO Начался новый сеанс
+2023-03-04 12:09:53 INFO База данных обнаружена
+2023-03-04 12:30:06 INFO Начался новый сеанс
+2023-03-04 12:30:06 ERROR При подключении к MySQL обнаружена ошибка: 2005 (HY000): Unknown MySQL server host '0.0.0.0:33060' (8)
+2023-03-04 12:33:00 INFO Начался новый сеанс
+2023-03-04 12:33:00 ERROR При подключении к MySQL обнаружена ошибка: 2003 (HY000): Can't connect to MySQL server on '192.168.1.1:3306' (61)
+2023-03-04 12:35:20 INFO Начался новый сеанс
+2023-03-04 12:35:20 INFO База данных обнаружена
+2023-03-04 12:43:43 INFO Начался новый сеанс
+2023-03-04 12:44:29 INFO Начался новый сеанс
+2023-03-04 12:44:29 INFO База данных обнаружена
+2023-03-05 12:14:38 INFO Начался новый сеанс
+2023-03-05 12:14:38 ERROR При подключении к MySQL обнаружена ошибка: 2005 (HY000): Unknown MySQL server host 'localhost:3307' (8)
+2023-03-05 12:15:14 INFO Начался новый сеанс
+2023-03-05 12:15:14 ERROR При подключении к MySQL обнаружена ошибка: 2003 (HY000): Can't connect to MySQL server on '3307:3306' (65)
+2023-03-05 12:15:56 INFO Начался новый сеанс
+2023-03-05 12:15:56 ERROR При подключении к MySQL обнаружена ошибка: 2005 (HY000): Unknown MySQL server host '3306:3307' (8)
+2023-03-05 12:21:19 INFO Начался новый сеанс
+2023-03-05 12:21:19 ERROR При подключении к MySQL обнаружена ошибка: 2005 (HY000): Unknown MySQL server host '3306:3306' (8)
+2023-03-05 12:22:51 INFO Начался новый сеанс
+2023-03-05 12:22:51 ERROR При подключении к MySQL обнаружена ошибка: 2003 (HY000): Can't connect to MySQL server on '3306:3306' (65)
+2023-03-05 12:24:09 INFO Начался новый сеанс
+2023-03-05 12:24:10 ERROR При подключении к MySQL обнаружена ошибка: 1130 (HY000): Host '192.168.1.3' is not allowed to connect to this MySQL server
+2023-03-05 12:24:36 INFO Начался новый сеанс
+2023-03-05 12:24:36 ERROR При подключении к MySQL обнаружена ошибка: 2005 (HY000): Unknown MySQL server host '192.168.1.3:3306' (8)
+2023-03-05 12:25:08 INFO Начался новый сеанс
+2023-03-05 12:25:08 INFO База данных обнаружена
+2023-03-21 15:23:43 INFO Начался новый сеанс
+2023-03-21 15:23:43 ERROR При подключении к MySQL обнаружена ошибка: 2005 (HY000): Unknown MySQL server host '127.0.0.1:3307' (8)
+2023-03-21 15:24:21 INFO Начался новый сеанс
+2023-03-21 15:24:22 INFO База данных обнаружена
+2023-03-22 10:47:56 INFO Начался новый сеанс
+2023-03-22 10:47:56 ERROR При подключении к MySQL обнаружена ошибка: 2005 (HY000): Unknown MySQL server host 'new' (8)
+2023-03-22 10:49:18 INFO Начался новый сеанс
+2023-03-22 10:49:18 ERROR При подключении к MySQL обнаружена ошибка: 2003 (HY000): Can't connect to MySQL server on '127.0.0.1:3307' (61)
+2023-03-22 10:50:32 INFO Начался новый сеанс
+2023-03-22 10:50:32 ERROR При подключении к MySQL обнаружена ошибка: 2003 (HY000): Can't connect to MySQL server on 'localhost:3307' (61)
+2023-03-22 10:51:12 INFO Начался новый сеанс
+2023-03-22 10:51:13 INFO База данных обнаружена
+2023-03-22 10:52:09 INFO Начался новый сеанс
+2023-03-22 10:52:09 INFO База данных обнаружена
+2023-03-22 10:57:05 INFO Начался новый сеанс
+2023-03-22 10:57:05 INFO База данных обнаружена
+2023-03-22 10:57:42 INFO Начался новый сеанс
+2023-03-22 10:57:42 INFO База данных создана
+2023-03-22 10:58:31 INFO Начался новый сеанс
+2023-03-22 10:58:31 INFO База данных обнаружена
+2023-03-22 10:58:54 INFO Начался новый сеанс
+2023-03-22 10:58:54 INFO База данных обнаружена

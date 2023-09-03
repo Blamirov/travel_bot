@@ -1,0 +1,37 @@
+version: "3"
+services:
+
+  mysql:
+    container_name: basic-mysql
+    image: mysql:8.0
+    restart: always
+    ports:
+      - "33061:3306"
+    environment:
+      MYSQL_ROOT_HOST: 0.0.0.0
+      MYSQL_ROOT_PASSWORD: Gombrayx_2997
+
+  telegram_bot:
+    container_name: telegram_bot
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    links:
+      - 'mysql'
+    volumes:
+      - /app
+    env_file:
+      - .env
+    depends_on:
+      - mysql
+    ports:
+      - "8000"
+
+
+
+
+
+
+
+
